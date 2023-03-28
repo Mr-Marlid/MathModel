@@ -6,7 +6,7 @@ from random import randint
 from random import uniform
 from scipy import integrate
 
-n = 13 # Вариант
+n = 11
 N = 250
 
 def tr_func1(x):
