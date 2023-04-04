@@ -7,7 +7,7 @@ from matplotlib.patches import Rectangle
 
 
 def func_p(x):
-    return np.sqrt(12 * np.cos(x) ** 2 + 10 * np.sin(x) ** 2)
+    return np.sqrt(19 * np.cos(x) ** 2 + 3 * np.sin(x) ** 2)
 
 def M(x,y,N):
     r=[]
@@ -16,7 +16,7 @@ def M(x,y,N):
     y_point = []
     x_not_point = []
     y_not_point = []
-    m=0
+    m = 0
     for i in range(N):
         r.append(math.sqrt(x[i]**2+y[i]**2))
     for i in range(N):
