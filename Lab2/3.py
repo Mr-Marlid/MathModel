@@ -28,7 +28,7 @@ def massiv(x,y):
     return black_x, black_y, green_x, green_y, k
 
 # 7  по моему варианту
-n = 7
+n = 8
 x = []
 y = []
 print("Введите N - кол-во случайных точек")
