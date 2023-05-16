@@ -1,6 +1,5 @@
 import numpy as np
-#Задаем функцию для метода Рунге-Кутты 4-го порядка:
-
+#функция для метода Рунге-Кутты 4-го порядка:
 def runge_kutta(f, x0, y0, h, x_end):
     x = [x0]
     y = [y0]
@@ -14,22 +13,14 @@ def runge_kutta(f, x0, y0, h, x_end):
         x.append(x[-1] + h)
     return x, y
 
-#Также задаем функцию точного решения:
+#функция точного решения:
 
 def exact_solution(x):
     return np.tan(x) - x
 
-
-
 y0 = 0
-
-#Задаем шаг h и точку окончания x_end:
-
 h = 0.1
-x_end = 0.5
-
-
-
+x_end = 1.0
 
 #Запускаем метод Рунге-Кутты и получаем численное решение:
 
@@ -37,7 +28,8 @@ x, y = runge_kutta(lambda x, y: (x+y)**2, 0, 0, h, x_end)
 
 #Сравниваем численное решение с точным решением и выводим результаты в виде таблицы:
 
-print("{:<10} {:8} {:8} ".format("x", "y_num", "y_exact"))
+print("{:<10} {:8} {:8} {:9}".format("x", "y_num", "y_exact", "error"))
 for i in range(len(x)):
     y_exact = exact_solution(x[i])
-    print("{:<10.1f} {:.6f} {:.6f}".format(x[i], y[i], y_exact))
+    error = abs( y[i] - y_exact)
+    print("{:<10.1f} {:.7f} {:.7f} {:.7f}".format(x[i], y[i], y_exact, error))
